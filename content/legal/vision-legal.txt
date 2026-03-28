@@ -1,0 +1,87 @@
+ChironMotion Vision
+法律文件（中英對照）
+
+【繁體中文】
+
+使用者同意與確認條款
+最後更新日期：2026/03/17
+
+歡迎使用 ChironMotion Vision（以下稱「本應用程式」）。在您開始使用本應用程式之前，請仔細閱讀以下條款。若您下載、安裝或使用本應用程式，即表示您已閱讀、理解並同意本條款之全部內容。
+
+1. 免責聲明：非醫療建議
+• 本應用程式提供之跳躍分析、RSI、關節角度等數據僅供運動表現監測與體能訓練參考，不具醫療診斷、預防或治療建議之效力。
+• 運動測試具有潛在風險。使用即表示您同意於安全環境下進行測試，並自行承擔運動過程中可能產生的受傷風險。
+
+2. 隱私核心：全機端處理
+• 所有影像、LiDAR 掃描數據及 AI 骨架辨識，均完全在您的 iPhone/iPad 設備上即時運算。
+• 原始影片、照片或深度圖數據絕不會上傳至雲端伺服器。
+• 數據僅在您主動點擊「分享」或「匯出」時才會離開您的裝置。
+
+3. 使用者安全聲明
+• 在開始測試前，請確保周遭環境平坦、無障礙物且不濕滑。
+• 本應用程式需獲得「相機」存取權以進行動作捕捉，以及「相簿」存取權以進行影片導入分析。
+
+4. 訂閱服務與應用程式內購買
+• ChironMotion Vision 提供以下訂閱方案：Free（每月有限次數測試）、Cam（無限次 Camera 分析）、Cam+AI（Camera + AI 建議 + PDF/CSV）、LiDAR+AI（全部功能含 LiDAR 3D 擷取分析）。
+• 訂閱分為月付與年付兩種方案。確認購買前，費用將透過您的 Apple ID 帳戶中扣款。
+• 訂閱將自動續訂，除非您在當前訂閱期限結束前至少 24 小時關閉自動續訂。
+• 您隨時可在裝置的「設定 > Apple ID > 訂閱項目」中管理或取消訂閱。
+• 退款事宜完全依照 Apple 退款政策處理，ChironMotion Studio 無法直接辦理退款。
+• 價格可能因地區而異，並可能調整，價格變動將提前通知。
+
+5. 智慧財產權
+• 您保有您的測試數據、匯出報告（PDF/CSV）及匯入影片的完整所有權。
+• ChironMotion Studio 保留本應用程式之軟體、演算法、介面設計與品牌之全部智慧財產權。
+• AI 生成的訓練建議文字僅供個人使用，不得進行商業轉載或散佈。
+
+6. 責任限制
+• ChironMotion Studio 不對因使用本應用程式所導致之任何間接、附帶、特殊或衍生性損害負責。
+• 若您因身體狀況、訓練方式或設備使用不當而受傷，責任由您自行承擔。
+
+7. 聯絡資訊
+• 電子郵件：impfactortw@gmail.com
+• 公司/開發者名稱：ChironMotion Studio
+
+【English】
+
+ChironMotion Vision
+Legal Documents (Bilingual)
+
+User Agreement and Confirmation
+Last Updated: March 17, 2026
+
+Welcome to ChironMotion Vision (the "App"). Please read the following terms carefully before using this App. By downloading, installing, or using this App, you acknowledge that you have read, understood, and agreed to all of these terms.
+
+1. Disclaimer: Not Medical Advice
+• The jump analysis, RSI, joint angles, and related data provided by this App are for sports performance monitoring and fitness training reference only and do not constitute medical diagnosis, prevention, or treatment advice.
+• Exercise testing carries inherent risks. By using this App, you agree to conduct tests in a safe environment and assume any risk of injury that may occur during exercise.
+
+2. Privacy Core: On-Device Processing
+• All images, LiDAR scan data, and AI skeleton recognition are processed entirely in real time on your iPhone/iPad device.
+• Original videos, photos, and depth map data are never uploaded to cloud servers.
+• Data leaves your device only when you actively tap "Share" or "Export".
+
+3. User Safety Statement
+• Before starting any test, please ensure the surrounding environment is level, free of obstacles, and not slippery.
+• This App requires access to "Camera" for motion capture and "Photos" for importing videos for analysis.
+
+4. Subscription Services and In-App Purchases
+• ChironMotion Vision offers the following plans: Free (limited tests per month), Cam (unlimited camera analysis), Cam+AI (Camera + AI advice + PDF/CSV), and LiDAR+AI (all features including LiDAR 3D capture analysis).
+• Subscriptions are available as monthly and yearly plans. Before purchase confirmation, the fee will be charged through your Apple ID account.
+• Subscriptions renew automatically unless auto-renewal is turned off at least 24 hours before the end of the current subscription period.
+• You may manage or cancel your subscription at any time in Settings > Apple ID > Subscriptions.
+• Refunds are handled entirely according to Apple's refund policy, and ChironMotion Studio cannot process refunds directly.
+• Prices may vary by region and are subject to change; price changes will be announced in advance.
+
+5. Intellectual Property
+• You retain full ownership of your test data, exported reports (PDF/CSV), and imported videos.
+• ChironMotion Studio retains all intellectual property rights to the App's software, algorithms, interface design, and brand.
+• AI-generated training advice text is for personal use only and may not be commercially reproduced or distributed.
+
+6. Limitation of Liability
+• ChironMotion Studio shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use of this App.
+• If you are injured due to your physical condition, training method, or improper device use, you are solely responsible.
+
+7. Contact Information
+• Email: impfactortw@gmail.com
+• Company/Developer Name: ChironMotion Studio

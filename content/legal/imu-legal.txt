@@ -1,0 +1,477 @@
+ChironMotion IMU 法律文件 / ChironMotion IMU Legal Documents
+
+中文 / Chinese
+
+本文件彙整 app 內目前使用中的法律文件，包含使用者同意條款、隱私權政策與 AI 使用聲明。
+
+English
+
+This document consolidates the legal documents currently used in the app: the user agreement, privacy policy, and AI usage statement.
+
+使用者同意條款 / User Agreement
+
+最後更新日期：2026/02/11 / Last Updated: February 11, 2026
+
+中文
+
+歡迎使用本應用程式（以下稱「本 App」）。在您開始使用本 App 之前，請仔細閱讀以下條款。若您勾選同意、下載、安裝或使用本 App，即表示您已閱讀、理解並同意本條款之全部內容。若您不同意，請勿使用本 App。
+
+1. 非醫療用途聲明 / 1. Non-Medical Use Disclaimer
+
+• 本 App 所提供的資訊、分析、報告、建議與任何內容（以下統稱「內容」），僅供一般健康、運動與教育用途參考。
+
+• 本 App 不提供醫療建議、診斷或治療，也不取代醫師、物理治療師或其他專業醫療人員的專業意見。
+
+• 若您有任何身體不適、受傷風險或醫療問題，請立即尋求合格醫療專業人員的協助。請勿僅依賴本 App 之內容做出醫療決策或延誤就醫。
+
+English
+
+The information, analysis, reports, suggestions, and any content provided by this App (collectively referred to as "Content") are for general health, fitness, and educational purposes only.
+
+This App does not provide medical advice, diagnosis, or treatment, and it is not a substitute for the professional judgment of a physician, physical therapist, or other qualified healthcare professionals.
+
+If you experience any physical discomfort, risk of injury, or have medical concerns, please seek immediate assistance from a qualified medical professional. Do not rely solely on the Content of this App for medical decision-making or to delay seeking medical treatment.
+
+2. 使用者資格與自我評估 / 2. User Eligibility and Self-Assessment
+
+• 您確認已年滿法定年齡或已取得監護人同意。
+
+• 在進行任何運動或訓練前，請自行評估身心狀況，並遵循專業教練或醫療人員的建議。
+
+• 若您曾有心血管疾病、骨骼肌肉傷病、暈厥或其他運動禁忌，請先諮詢醫療專業人員後再使用本 App。
+
+English
+
+You confirm that you have reached the legal age of majority or have obtained consent from a legal guardian.
+
+Before engaging in any exercise or training, please assess your own physical and mental condition and follow the advice of professional coaches or medical personnel.
+
+If you have a history of cardiovascular disease, musculoskeletal injuries, fainting, or any other contraindications to exercise, please consult a medical professional before using this App.
+
+3. 裝置與資料來源限制 / 3. Device and Data Source Limitations
+
+• 本 App 的分析結果依賴您的裝置、感測器、佩戴位置、環境條件與您提供的資料。任何偏差、錯誤或不完整，可能影響結果準確性。
+
+• 本 App 可能提供資料品質或偵測信心度等提示，僅為系統推估，不保證絕對正確。
+
+English
+
+The analysis results of this App depend on your device, sensors, wearing position, environmental conditions, and the data you provide. Any deviations, errors, or incompleteness may affect the accuracy of the results.
+
+This App may provide indicators such as data quality or detection confidence levels; these are system estimations and do not guarantee absolute accuracy.
+
+4. 運動風險告知 / 4. Exercise Risk Notice
+
+• 運動存在受傷風險。您應在安全環境、適當裝備及充分熱身下進行訓練，並依個人能力量力而為。
+
+• 在進行高強度或高衝擊訓練（如跳躍、衝刺）時，請確保場地安全、周圍無障礙，並在必要時有專業人員陪同。
+
+English
+
+Physical exercise involves inherent risks of injury. You should perform training in a safe environment with appropriate equipment and sufficient warm-up, and act according to your personal capabilities.
+
+When performing high-intensity or high-impact training (such as jumping or sprinting), ensure the venue is safe and clear of obstacles, and seek professional supervision if necessary.
+
+5. 責任限制 / 5. Limitation of Liability
+
+• 在法律允許的最大範圍內，本 App 及其開發者、合作夥伴對於因使用或無法使用本 App 所造成的任何直接、間接、偶發、特殊或衍生性損害（包含但不限於資料遺失、收益損失、運動受傷或第三方索賠），不承擔任何責任。
+
+• 本 App 不保證內容之完全正確、即時或適用於所有情境，您應自行判斷並承擔使用風險。
+
+English
+
+To the maximum extent permitted by law, this App and its developers and partners shall not be liable for any direct, indirect, incidental, special, or consequential damages (including but not limited to loss of data, loss of revenue, sports injuries, or third-party claims) resulting from the use or inability to use this App.
+
+This App does not guarantee that the Content is entirely accurate, up-to-date, or applicable to all scenarios. You shall exercise your own judgment and bear the risks associated with its use.
+
+6. 個人資料與隱私 / 6. Personal Data and Privacy
+
+• 本 App 可能會處理您的運動數據、裝置信息與使用紀錄，以提供分析、改善服務與安全性。詳細內容請參考《隱私權政策》。
+
+• 您可以在設定中管理資料收集與分享偏好。除法律要求或您另行同意外，我們不會向未授權的第三方提供您的個人資料。
+
+English
+
+This App may process your exercise data, device information, and usage records to provide analysis, improve services, and ensure security. For detailed information, please refer to our Privacy Policy.
+
+You can manage data collection and sharing preferences in the settings. Except as required by law or otherwise agreed upon by you, we will not provide your personal data to unauthorized third parties.
+
+7. 內容與服務變更 / 7. Changes to Content and Services
+
+• 我們可能隨時更新或調整本 App 的功能、內容與使用規範，並於必要時更新本條款。重大變更將以 App 內通知或其他合理方式告知。
+
+English
+
+We may update or adjust the features, content, and usage specifications of this App at any time and update these terms when necessary. Material changes will be notified via in-app notifications or other reasonable means.
+
+8. 使用規範 / 8. Usage Code of Conduct
+
+• 您同意不以任何違法或不當方式使用本 App，不進行逆向工程、未經授權之擷取、修改或散布本 App 的任何部分。
+
+• 您不得將本 App 用於醫療診斷、治療、臨床決策或其他受法規限制之用途。
+
+English
+
+You agree not to use this App in any illegal or improper manner, and you shall not engage in reverse engineering, unauthorized extraction, modification, or distribution of any part of this App.
+
+You shall not use this App for medical diagnosis, treatment, clinical decision-making, or any other purposes restricted by medical regulations.
+
+9. 終止使用 / 9. Termination of Use
+
+• 若您違反本條款或有濫用本 App 之行為，我們得在必要範圍內暫停或終止您對本 App 的使用。
+
+English
+
+If you violate these terms or engage in misuse of this App, we reserve the right to suspend or terminate your access to this App within the necessary scope.
+
+10. 準據法與爭議處理 / 10. Governing Law and Dispute Resolution
+
+• 本條款之解釋與適用以您所在地適用之法律為準據法。若雙方就本條款或本 App 使用發生爭議，應以協商為先；協商不成時，依適用法令與管轄法院處理。
+
+English
+
+The interpretation and application of these terms shall be governed by the laws of your jurisdiction. Any dispute arising from these terms or the use of this App shall first be resolved through friendly negotiation; if negotiation fails, the dispute shall be handled in accordance with applicable laws and by the court of jurisdiction.
+
+11. 聯絡我們 / 11. Contact Us
+
+• 若您對本條款或本 App 有任何疑問，請透過以下方式聯繫我們：
+
+• 電子郵件：impfactortw@gmail.com
+
+• 公司/開發者名稱：ChironMotion Studio
+
+English
+
+If you have any questions regarding these terms or this App, please contact us via:
+
+Email: impfactortw@gmail.com
+
+Company/Developer Name: ChironMotion Studio
+
+隱私權政策 / Privacy Policy
+
+最後更新日期：2026/02/11 / Last Updated: February 11, 2026
+
+中文
+
+本隱私權政策（以下簡稱「本政策」）說明我們如何蒐集、使用、處理與保護您在使用本應用程式（以下稱「本 App」）時提供或產生的資料。使用本 App 即表示您已閱讀、理解並同意本政策之內容。如您不同意，請停止使用本 App。
+
+1. 我們蒐集的資料類型 / 1. Types of Data We Collect
+
+• 您主動提供的資料
+
+• 基本資料：使用者 ID、身高、體重等運動分析必要資訊（若您選擇提供）。
+
+• 使用過程產生的資料
+
+• 感測器與運動數據：加速度、時間戳等，用於運動表現分析與報告生成。
+
+• 使用紀錄與診斷資訊：功能使用次數、錯誤日誌、效能資料（僅用於改善服務與除錯）。
+
+• 裝置與權限
+
+• 感測器權限：如加速度計、陀螺儀，用於運動分析。
+
+• 本 App 不會要求或存取與運動分析無關的敏感權限（如麥克風、相機、通訊錄），除非您在特定功能中明確同意。
+
+English
+
+Information You Provide Voluntarily
+
+Basic Profile: User ID, height, weight, and other necessary information for exercise analysis (if you choose to provide them).
+
+Data Generated During Use
+
+Sensor and Motion Data: Acceleration, timestamps, etc., used for exercise performance analysis and report generation.
+
+Usage Records and Diagnostic Information: Feature usage frequency, error logs, and performance data (used solely for service improvement and debugging).
+
+Device and Permissions
+
+Sensor Permissions: Such as accelerometer and gyroscope, used for motion analysis.
+
+Note: This App will not request or access sensitive permissions unrelated to motion analysis (such as microphone, camera, or contacts) unless you provide explicit consent for a specific feature.
+
+2. 我們如何使用您的資料 / 2. How We Use Your Data
+
+• 提供與維護服務：進行運動數據分析、產生報告與圖表、改善使用體驗。
+
+• 服務優化與安全性：偵測異常、廣告除錯、效能監測與功能改進。
+
+• 客服支援：回覆您的詢問與請求。
+
+• 法令遵循：在法律要求或為保護使用者與本 App 合法權益時使用。
+
+English
+
+Providing and Maintaining Services: Performing motion data analysis, generating reports and charts, and improving user experience.
+
+Service Optimization and Security: Detecting anomalies, debugging, monitoring performance, and improving functionality.
+
+Customer Support: Responding to your inquiries and requests.
+
+Legal Compliance: Using data as required by law or to protect the legal rights of users and this App.
+
+3. 資料處理與保存 / 3. Data Processing and Retention
+
+• 本地處理：運動分析與報告生成盡可能於裝置端進行，降低傳輸風險。
+
+• 裝置端 AI：AI 訓練建議主要透過 Apple FoundationModels 框架於裝置本地進行處理。用於推論的動作表現指標不包含任何可識別個人身份資訊，亦不會與任何第三方 AI 服務提供者共享。
+
+English
+
+Local Processing: Motion analysis and report generation are performed on the device side as much as possible to reduce transmission risks.
+
+On-Device AI: AI-generated training advice is primarily processed locally using Apple's FoundationModels framework. Motion-related performance metrics used for inference do not include personally identifiable information and are not shared with any third-party AI providers.
+
+4. 資料分享與第三方 / 4. Data Sharing and Third Parties
+
+• 我們不會在未經您同意的情況下，向未授權的第三方出售或出借您的個人資料。
+
+• 在以下情況可能分享：
+
+• 法律要求或政府機關合法請求。
+
+• 維護本 App、保護使用者安全或防止違法行為所必需。
+
+English
+
+We will not sell or lease your personal data to unauthorized third parties without your consent.
+
+Data may be shared in the following circumstances:
+
+As required by law or a legal request from government authorities.
+
+When necessary to maintain this App, protect user safety, or prevent illegal activities.
+
+5. 您的權利與選擇 / 5. Your Rights and Choices
+
+• 存取與更正：您可於 App 內檢視或更新基本資料。
+
+• 刪除：您可要求刪除帳號或資料（在法令允許與不影響基本運作之範圍內）。若無法立即刪除，我們將於合理時間內完成。
+
+• 同意撤回：您可隨時關閉特定權限（如感測器存取）或停止使用本 App。
+
+• 資料攜帶（如適用）：在法規許可的情況下，您可要求提供資料副本。
+
+English
+
+Access and Correction: You may view or update your basic profile within the App.
+
+Deletion: You may request the deletion of your account or data (within the scope permitted by law and without affecting basic operations). If immediate deletion is not possible, we will complete it within a reasonable timeframe.
+
+Withdrawal of Consent: You may disable specific permissions (e.g., sensor access) or stop using this App at any time.
+
+Data Portability (if applicable): Where permitted by law, you may request a copy of your data.
+
+6. 兒童與青少年保護 / 6. Protection of Children and Minors
+
+• 本 App 的使用者應依適用法令之年齡限制使用。若您未達法定年齡，請在監護人同意下使用。
+
+• 我們不會在明知使用者為兒童的情況下，主動蒐集其個人資料。若您為監護人並認為我們不當保存了兒童資料，請與我們聯繫以協助刪除。
+
+English
+
+Users of this App must comply with the age limits specified by applicable laws. If you are under the legal age, please use this App with the consent of a guardian.
+
+We do not knowingly collect personal data from children. If you are a guardian and believe we have inadvertently stored data from a child, please contact us to assist with its deletion.
+
+7. 資料安全 / 7. Data Security
+
+• 我們採取合理且符合業界標準的安全措施，保護資料免於未經授權的存取、修改、披露或毀損。
+
+• 請理解任何網路或儲存系統都不可能 100% 安全。若發生可能影響您權益的安全事件，我們將依法或依實務慣例通知您。
+
+English
+
+We adopt reasonable and industry-standard security measures to protect data from unauthorized access, modification, disclosure, or destruction.
+
+Please understand that no network or storage system is 100% secure. If a security incident occurs that may affect your rights, we will notify you in accordance with the law or industry practices.
+
+8. 國際傳輸（如適用） / 8. International Transfers (if applicable)
+
+• 若您的資料被傳輸至您所在國家/地區以外的伺服器，我們會遵循適用的跨境資料傳輸規範，並採取合理保護措施。
+
+English
+
+If your data is transferred to servers outside your country/region, we will comply with applicable cross-border data transfer regulations and take reasonable protective measures.
+
+9. 與其他網站或服務的連結 / 9. Links to Other Websites or Services
+
+• 本 App 可能包含連結至第三方網站或服務。該等第三方之隱私實務不受本政策約束，請另行查閱其隱私政策。
+
+English
+
+This App may contain links to third-party websites or services. The privacy practices of such third parties are not governed by this Policy; please refer to their respective privacy policies.
+
+10. 本政策之變更 / 10. Changes to This Policy
+
+• 我們可能因法規更新、服務調整或安全需求而修改本政策。重大變更將以 App 內通知或其他合理方式告知。更新後之政策自公告時生效。
+
+English
+
+We may modify this Policy due to regulatory updates, service adjustments, or security requirements. Material changes will be notified via in-app notifications or other reasonable means. The updated policy becomes effective upon posting.
+
+11. 聯絡我們 / 11. Contact Us
+
+• 若您對本政策或個人資料處理有任何問題、請求或投訴，請透過以下方式聯繫我們：
+
+• 電子郵件：impfactortw@gmail.com
+
+• 公司/開發者名稱：ChironMotion Studio
+
+English
+
+If you have any questions, requests, or complaints regarding this Policy or personal data processing, please contact us via:
+
+Email: impfactortw@gmail.com
+
+Company/Developer Name: ChironMotion Studio
+
+AI 使用聲明與倫理原則 / AI Usage Statement and Ethical Principles
+
+最後更新日期：2026/02/11 / Last Updated: February 11, 2026
+
+中文
+
+本應用程式（以下稱「本 App」）在部分功能中使用人工智慧（AI）與機器學習技術，用於運動表現分析、數據整理與報告呈現。本聲明說明 AI 的使用目的、限制與我們遵循的倫理原則。
+
+1. 目的與範圍 / 1. Purpose and Scope
+
+• 本聲明說明 AI 的使用目的、限制與我們遵循的倫理原則。
+
+English
+
+This statement outlines the purpose of AI usage, its limitations, and the ethical principles we uphold.
+
+2. 非醫療用途 / 2. Non-Medical Use
+
+• 本 App 的 AI 功能僅用於一般健康、運動與教育目的之參考，並非醫療建議、診斷或治療。
+
+• AI 產生的內容不應取代醫師、物理治療師或其他專業人員的專業意見。
+
+English
+
+The AI features of this App are intended solely for general health, fitness, and educational purposes and do not constitute medical advice, diagnosis, or treatment.
+
+AI-generated content should not replace the professional judgment of physicians, physical therapists, or other qualified professionals.
+
+3. 人本優先與使用者控制 / 3. Human-Centric Design and User Control
+
+• AI 的設計以協助與增強使用者的判斷為目的，而非替代人類決策。
+
+• 使用者可自由選擇是否啟用 AI 相關功能（如分析建議或自動報告摘要），並可隨時關閉或刪除相關資料（在法令與技術可行範圍內）。
+
+English
+
+AI is designed to assist and enhance user judgment rather than replace human decision-making.
+
+Users have the freedom to choose whether to enable AI-related features (such as analytical suggestions or automated report summaries) and may disable these features or delete relevant data at any time (within legal and technical feasibility).
+
+4. 隱私與資料保護 / 4. Privacy and Data Protection
+
+• 我們優先採用裝置端處理，減少資料傳輸與保存風險；若需雲端處理，僅在必要範圍內進行，並採取合理的安全措施。
+
+• 未經您同意，我們不會向未授權的第三方出售或出借可識別個人的資料。詳細請參考《隱私權政策》。
+
+• 對於用於模型訓練或優化的資料（如適用），我們會採用去識別化或彙整統計方式，並遵守適用法規。
+
+English
+
+We prioritize on-device processing to minimize data transmission and storage risks. If cloud processing is required, it is conducted only to the extent necessary and with reasonable security measures in place.
+
+We will not sell or lease personally identifiable information to unauthorized third parties without your consent. For details, please refer to our Privacy Policy.
+
+For data used in model training or optimization (where applicable), we employ de-identification or aggregated statistical methods and comply with all applicable regulations.
+
+5. 公平性與偏誤管理 / 5. Fairness and Bias Management
+
+• 我們致力於減少 AI 模型在性別、年齡、體型、運動背景等方面的偏誤。
+
+• 若發現 AI 產生的結果對特定群體不公平或有系統性誤差，請與我們聯繫，我們將評估並改進。
+
+English
+
+We are committed to reducing biases in our AI models regarding gender, age, body type, and athletic background.
+
+If you find that AI-generated results are unfair to specific groups or contain systemic errors, please contact us so we can evaluate and improve the system.
+
+6. 透明度與可解釋性 / 6. Transparency and Explainability
+
+• 我們將盡可能以清楚的方式說明 AI 功能的使用情境、輸入來源與主要影響因素。
+
+• 在可行範圍內，我們提供關鍵指標或信心分數，協助使用者理解 AI 的可靠度與限制。
+
+English
+
+We aim to explain the usage scenarios, input sources, and primary influencing factors of our AI features in a clear and accessible manner.
+
+Within technical feasibility, we provide key metrics or confidence scores to help users understand the reliability and limitations of the AI.
+
+7. 安全與風險防範 / 7. Safety and Risk Prevention
+
+• 運動活動具有固有風險。AI 產生的建議僅供參考，請依自身狀況、專業建議與環境安全條件合理使用。
+
+• 若 AI 結果與您的實際狀況相矛盾，請優先採信人類專業判斷或停止相關活動，並回報疑慮。
+
+English
+
+Physical activities involve inherent risks. AI-generated suggestions are for reference only; please use them reasonably based on your own condition, professional advice, and environmental safety.
+
+If AI results contradict your actual physical condition, please prioritize human professional judgment or cease the activity immediately and report your concerns.
+
+8. 責任限制 / 8. Limitation of Liability
+
+• 在法律允許的範圍內，本 App 及其開發者對 AI 產生內容的正確性、即時性或完全性不作保證。使用者應自行判斷並承擔使用風險。
+
+• 本 App 不對因使用或依賴 AI 內容所造成的任何直接或間接損害負責。
+
+English
+
+To the extent permitted by law, this App and its developers make no guarantees regarding the accuracy, timeliness, or completeness of AI-generated content. Users shall exercise their own judgment and bear all risks associated with its use.
+
+This App shall not be held liable for any direct or indirect damages resulting from the use of or reliance on AI-generated content.
+
+9. 兒童與青少年保護 / 9. Protection of Children and Minors
+
+• 若使用者未達法定年齡，應在監護人同意與陪同下使用本 App。
+
+• 我們不會在明知使用者為兒童的情況下主動蒐集可識別個資。若您為監護人並有疑慮，請聯繫我們以協助處理。
+
+English
+
+Users under the legal age should use this App only with the consent and supervision of a guardian.
+
+We do not knowingly collect personally identifiable information from children. If you are a guardian and have concerns, please contact us for assistance.
+
+10. 開發與審查流程 / 10. Development and Review Process
+
+• 我們在 AI 功能上線前進行測試與風險評估，並持續監控效能與安全性。
+
+• 對於重大功能變更或政策調整，我們將以 App 內通知或其他合理方式告知使用者。
+
+English
+
+We conduct testing and risk assessments before launching AI features and continuously monitor their performance and safety.
+
+Significant changes to features or policy adjustments will be communicated to users via in-app notifications or other reasonable means.
+
+11. 使用者回饋 / 11. User Feedback
+
+• 若您對 AI 功能有任何建議、疑慮或希望檢舉偏誤與錯誤，請與我們聯繫過。我們重視您的意見並持續改進。
+
+English
+
+If you have suggestions or concerns regarding AI features, or wish to report biases or errors, please contact us. We value your feedback as it helps us continuously improve.
+
+12. 聯絡我們 / 12. Contact Us
+
+• 電子郵件：impfactortw@gmail.com
+
+• 公司/開發者名稱：ChironMotion Studio
+
+English
+
+Email: impfactortw@gmail.com
+
+Company/Developer Name: ChironMotion Studio
