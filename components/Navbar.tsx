@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { ArrowRight, Menu, X, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import imuLogo from '../../素材/ChironmotionIMU/CMI.jpg';
-import visionLogo from '../../素材/ChironmotionVosion/CMV.png';
+import imuLogo from '../assets/CMI.jpg';
+import visionLogo from '../assets/CMV.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

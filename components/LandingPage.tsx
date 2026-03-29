@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { ArrowRight, Download, Play, ShieldCheck, Smartphone, Sparkles, Activity, BarChart3, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import imuLogo from '../../素材/ChironmotionIMU/CMI.jpg';
+import imuLogo from '../assets/CMI.jpg';
 import imuResultImage from '../assets/imu-result.jpg';
 import imuSymmetryImage from '../assets/imu-symmetry.jpg';
 
-import visionLogo from '../../素材/ChironmotionVosion/CMV.png';
+import visionLogo from '../assets/CMV.png';
 import visionResultImage from '../assets/vision-result.jpg';
 import visionSkeletonImage from '../assets/vision-skeleton.jpg';
-import imuVideo from '../../素材/ChironmotionIMU/ChironMotionIMU.mp4';
+import imuVideo from '../assets/ChironMotionIMU.mp4';
 
 const downloadIMU = 'https://apps.apple.com/us/app/chironmotion-imu/id6758951844';
 

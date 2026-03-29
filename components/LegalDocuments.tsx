@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Download, Printer, ShieldCheck, ChevronRight } from 'lucide-react';
 
-import imuLogo from '../../素材/ChironmotionIMU/CMI.jpg';
-import visionLogo from '../../素材/ChironmotionVosion/CMV.png';
+import imuLogo from '../assets/CMI.jpg';
+import visionLogo from '../assets/CMV.png';
 import { legalData } from '../constants/legalData';
 
 type AppKey = 'imu' | 'vision';
