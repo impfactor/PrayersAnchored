@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Download, Printer, ShieldCheck, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 import imuLogo from '../assets/CMI.jpg';
 import visionLogo from '../assets/CMV.png';
@@ -9,6 +10,30 @@ type AppKey = 'imu' | 'vision';
 
 const LegalDocuments: React.FC = () => {
   const [activeApp, setActiveApp] = useState<AppKey>('imu');
+  const { language } = useLanguage();
+  const copy = language === 'en'
+    ? {
+        badge: 'Legal Resource Center',
+        title: 'ChironMotion Legal Center',
+        desc: 'We keep privacy first. Below are the official legal terms for the ChironMotion apps, including user rights, data protection policy, and AI ethics guidance.',
+        print: 'Print File',
+        secure: 'All agreements are governed by law and effective immediately',
+        contactBadge: 'Support Center',
+        contactTitle: 'Contact the Data Security Team',
+        contactDesc: 'Have questions about the terms or privacy policy? Our legal and security team is ready to help.',
+        email: 'Email Us',
+      }
+    : {
+        badge: 'Legal Resource Center',
+        title: 'ChironMotion 法律中心',
+        desc: '我們堅持「隱私優先」的核心價值。以下為 ChironMotion 系列 App 的正式法律條款，包含您的權益保障、數據保護政策與 AI 倫理指南。',
+        print: '列印檔案',
+        secure: '所有協議受法律管轄且即時生效',
+        contactBadge: 'Support Center',
+        contactTitle: '聯繫數據安全團隊',
+        contactDesc: '對條款或隱私有任何疑問？我們的法務與安全團隊隨時為您解答。',
+        email: '電子郵件聯絡',
+      };
 
   useEffect(() => {
     const hash = window.location.hash.replace('#', '').toLowerCase();
@@ -60,14 +85,13 @@ const LegalDocuments: React.FC = () => {
             <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 rounded-full bg-brand-blue/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-blue">
-                  Legal Resource Center
+                  {copy.badge}
                 </div>
                 <h1 className="mt-6 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-                  ChironMotion <br /><span className="text-gradient-premium">法律中心</span>
+                  {copy.title}
                 </h1>
                 <p className="mt-8 text-lg font-medium leading-relaxed text-slate-600">
-                  我們堅持「隱私優先」的核心價值。以下為 ChironMotion 系列 App 的正式法律條款，
-                  包含您的權益保障、極致的數據保護政策與 AI 倫理指南。
+                  {copy.desc}
                 </p>
               </div>
 
@@ -75,7 +99,9 @@ const LegalDocuments: React.FC = () => {
                 {Object.keys(legalData).map((key) => {
                   const appKey = key as AppKey;
                   const isActive = activeApp === appKey;
-                  const appTitle = appKey === 'imu' ? 'IMU 分析儀' : 'Vision 視覺分析';
+                  const appTitle = language === 'en'
+                    ? (appKey === 'imu' ? 'IMU Analysis' : 'Vision Analysis')
+                    : (appKey === 'imu' ? 'IMU 分析儀' : 'Vision 視覺分析');
                   return (
                     <button
                       key={appKey}
@@ -114,11 +140,11 @@ const LegalDocuments: React.FC = () => {
                 className="btn-gradient-brand inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-black shadow-lg"
               >
                 <Printer className="h-4 w-4" />
-                列印檔案
+                {copy.print}
               </button>
               <div className="flex items-center gap-3 text-xs font-bold text-slate-400">
                 <ShieldCheck className="h-5 w-5 text-brand-green" />
-                <span>所有協議受法律管轄且即時生效</span>
+                <span>{copy.secure}</span>
               </div>
             </div>
           </div>
@@ -197,19 +223,19 @@ const LegalDocuments: React.FC = () => {
 
           {/* Contact Section */}
           <section className="reveal rounded-[48px] bg-slate-950 p-10 text-center text-white shadow-2xl sm:p-20" style={{ animationDelay: '0.2s' }}>
-             <div className="inline-flex rounded-full bg-white/10 px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 mb-8 font-black">
-                Support Center
+            <div className="inline-flex rounded-full bg-white/10 px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 mb-8 font-black">
+                {copy.contactBadge}
               </div>
-            <h3 className="text-3xl font-black sm:text-5xl">聯繫數據安全團隊</h3>
+            <h3 className="text-3xl font-black sm:text-5xl">{copy.contactTitle}</h3>
             <p className="mx-auto mt-8 max-w-xl text-lg font-medium text-slate-400 leading-relaxed">
-              對條款或隱私有任何疑問？我們的法務與安全團隊隨時為您解答。
+              {copy.contactDesc}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
               <a
                 href="mailto:impfactortw@gmail.com"
                 className="btn-gradient-brand inline-flex w-full items-center justify-center gap-3 rounded-2xl px-10 py-5 text-sm font-black shadow-lg sm:w-auto"
               >
-                電子郵件聯絡
+                {copy.email}
               </a>
               <div className="text-xs font-black uppercase tracking-widest text-slate-600">
                 ChironMotion Studio &copy; 2026

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Download, Play, ShieldCheck, Smartphone, Sparkles, Activity, BarChart3, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Download, Play, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 import imuLogo from '../assets/CMI.jpg';
 import imuResultImage from '../assets/imu-result.jpg';
@@ -13,75 +14,10 @@ import imuVideo from '../assets/ChironMotionIMU.mp4';
 
 const downloadIMU = 'https://apps.apple.com/us/app/chironmotion-imu/id6758951844';
 
-const featureItems = [
-  {
-    icon: <Activity className="h-5 w-5" />,
-    title: '聚焦跳躍分析',
-    desc: '以 CMJ、SLS、起跳與落地等情境為核心，讓使用者快速理解動作表現。',
-  },
-  {
-    icon: <BarChart3 className="h-5 w-5" />,
-    title: '數據與畫面並行',
-    desc: 'IMU 讀數據，Vision 看姿勢，兩種視角合在一起更容易做判讀。',
-  },
-  {
-    icon: <Smartphone className="h-5 w-5" />,
-    title: 'iPhone 直接操作',
-    desc: '從測試、檢視到下載報告，都是手機上就能完成的流程。',
-  },
-  {
-    icon: <ShieldCheck className="h-5 w-5" />,
-    title: '隱私與本機優先',
-    desc: '以本機處理與最小化資料為原則，保留使用者對資料的掌控感。',
-  },
-];
-
-interface MeasurementGroup {
-  app: string;
-  title: string;
-  desc: string;
-  items: string[][];
-  notes: string[];
-  image?: any;
-}
-
-const measurementGroups: MeasurementGroup[] = [
-  {
-    app: 'IMU',
-    title: 'ChironMotion IMU',
-    desc: '以 200 Hz 感測資料整理跳躍表現，從起跳到落地都能快速比對。',
-    items: [
-      ['CMJ', 'Countermovement Jump'],
-      ['SJ', 'Squat Jump'],
-      ['DJ', 'Drop Jump'],
-      ['SLS', 'Single Leg Stance'],
-    ],
-    notes: [
-      '跳躍高度、飛行時間、RSI、RFD，直接整理。',
-      'DJ 看反應力與落地控制，SLS 看單腳穩定。',
-      '可輸出 PDF / CSV，方便追蹤訓練變化。',
-    ],
-    image: imuSymmetryImage,
-  },
-  {
-    app: 'Vision',
-    title: 'ChironMotion Vision',
-    desc: '以影像、骨架與關鍵幀整理動作過程，讓姿態差異更容易看懂。',
-    items: [
-      ['CMJ', 'Countermovement Jump'],
-      ['SJ', 'Squat Jump'],
-      ['DS', 'DS'],
-    ],
-    notes: [
-      '33 個關鍵點、信心分數與手動修正。',
-      'CMJ、SJ、DS 的畫面比對更直觀。',
-      '可匯入影片並輸出 PDF / CSV。',
-    ],
-    image: visionSkeletonImage,
-  },
-];
-
 const LandingPage: React.FC = () => {
+  const { t } = useLanguage();
+  const copy = t.landing;
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -104,6 +40,25 @@ const LandingPage: React.FC = () => {
     // Handle dynamically added content if any
     return () => observer.disconnect();
   }, []);
+
+  const measurementCards = [
+    {
+      app: 'IMU',
+      title: copy.measurements.imu.title,
+      desc: copy.measurements.imu.desc,
+      items: copy.measurements.imu.items,
+      notes: copy.measurements.imu.notes,
+      image: imuSymmetryImage,
+    },
+    {
+      app: 'Vision',
+      title: copy.measurements.vision.title,
+      desc: copy.measurements.vision.desc,
+      items: copy.measurements.vision.items,
+      notes: copy.measurements.vision.notes,
+      image: visionSkeletonImage,
+    },
+  ];
 
   return (
     <div className="bg-white text-slate-900">
@@ -129,12 +84,11 @@ const LandingPage: React.FC = () => {
           </div>
 
             <h1 className="relative z-20 -mt-10 text-4xl font-black leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-7xl">
-            量化真正重要的動作細節
+            {copy.hero.title}
           </h1>
 
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            IMU 以 200 Hz 感測資料量化跳躍，Vision 以影像、骨架與關鍵幀讀懂動作。
-            兩款 App 分別對應不同的跳躍測試，讓訓練現場更快看出差異、進步與下一步。
+            {copy.hero.description}
           </p>
 
 
@@ -145,7 +99,7 @@ const LandingPage: React.FC = () => {
               rel="noopener noreferrer"
               className="btn-gradient-brand flex w-full items-center justify-center gap-2 rounded-full px-8 py-5 text-base font-black shadow-2xl sm:w-auto"
             >
-              下載 IMU 版
+              {copy.hero.ctaIMU}
               <ArrowRight className="h-5 w-5" />
             </a>
             <button
@@ -153,9 +107,9 @@ const LandingPage: React.FC = () => {
               disabled
               className="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-8 py-5 text-base font-black text-slate-950 transition sm:w-auto"
             >
-              Vision 版
+              {copy.hero.ctaVision}
               <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-slate-500">
-                即將推出
+                {copy.hero.comingSoon}
               </span>
               <Play className="h-5 w-5 text-slate-400" />
             </button>
@@ -163,15 +117,15 @@ const LandingPage: React.FC = () => {
 
           <div className="mt-16 flex items-center justify-center gap-6 overflow-hidden py-2 grayscale opacity-40">
             <div className="flex shrink-0 items-center gap-2">
-              <span className="text-sm font-black tracking-tighter">200 HZ IMU</span>
+              <span className="text-sm font-black tracking-tighter">{copy.hero.stats[0]}</span>
             </div>
             <div className="h-1 w-1 rounded-full bg-slate-400"></div>
             <div className="flex shrink-0 items-center gap-2">
-              <span className="text-sm font-black tracking-tighter">骨架追蹤</span>
+              <span className="text-sm font-black tracking-tighter">{copy.hero.stats[1]}</span>
             </div>
             <div className="h-1 w-1 rounded-full bg-slate-400"></div>
             <div className="flex shrink-0 items-center gap-2">
-              <span className="text-sm font-black tracking-tighter">AI 建議</span>
+              <span className="text-sm font-black tracking-tighter">{copy.hero.stats[2]}</span>
             </div>
           </div>
         </div>
@@ -180,13 +134,13 @@ const LandingPage: React.FC = () => {
 
       <section id="features" className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="reveal flex flex-col items-center text-center mb-16">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">產品核心</p>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">{copy.core.eyebrow}</p>
           <h2 className="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
-            兩款 App，對應不同的跳躍測試
+            {copy.core.title}
           </h2>
           <div className="mt-4 h-1.5 w-20 rounded-full bg-brand-blue/20"></div>
           <p className="mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
-            IMU 讀數據，Vision 看動作。每一款都專注一種測試方式，讓教練與運動員更快找到該看的重點。
+            {copy.core.desc}
           </p>
         </div>
 
@@ -202,15 +156,14 @@ const LandingPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="inline-flex rounded-full bg-brand-blue/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-blue">
-                    IMU Test Set
+                    {copy.core.imuLabel}
                   </div>
-                  <h3 className="mt-1 text-3xl font-black text-slate-950">ChironMotion IMU</h3>
+                  <h3 className="mt-1 text-3xl font-black text-slate-950">{copy.core.imuTitle}</h3>
                 </div>
               </div>
 
               <p className="mt-8 text-lg leading-relaxed text-slate-600">
-                用 iPhone 的感測資料，把 CMJ、SJ、DJ、SLS 變成可以比較的結果。
-                跳躍高度、飛行時間、RSI、RFD 與落地衝擊，都能在同一個流程中看懂。
+                {copy.core.imuDesc}
               </p>
 
               <div className="mt-auto pt-10">
@@ -220,19 +173,19 @@ const LandingPage: React.FC = () => {
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
                         <CheckCircle2 size={14} />
                       </div>
-                      200 Hz 採樣，細看起跳與落地
+                      {copy.core.imuBullets[0]}
                     </li>
                     <li className="flex items-center gap-3 text-sm font-bold text-slate-700">
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
                         <CheckCircle2 size={14} />
                       </div>
-                      CMJ / SJ / DJ / SLS 對應現場測試
+                      {copy.core.imuBullets[1]}
                     </li>
                     <li className="flex items-center gap-3 text-sm font-bold text-slate-700">
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
                         <CheckCircle2 size={14} />
                       </div>
-                      PDF 報告、CSV 匯出與歷史紀錄
+                      {copy.core.imuBullets[2]}
                     </li>
                   </ul>
                   
@@ -260,15 +213,14 @@ const LandingPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="inline-flex rounded-full bg-brand-cyan/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-cyan">
-                    Vision Test Set
+                    {copy.core.visionLabel}
                   </div>
-                  <h3 className="mt-1 text-3xl font-black text-slate-950">ChironMotion Vision</h3>
+                  <h3 className="mt-1 text-3xl font-black text-slate-950">{copy.core.visionTitle}</h3>
                 </div>
               </div>
 
               <p className="mt-8 text-lg leading-relaxed text-slate-600">
-                以影像、骨架與關鍵幀看懂 CMJ、SJ、DS。
-                需要時也能手動修正關鍵點，讓分析更貼近現場。
+                {copy.core.visionDesc}
               </p>
 
               <div className="mt-auto pt-10">
@@ -278,19 +230,19 @@ const LandingPage: React.FC = () => {
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
                         <CheckCircle2 size={14} />
                       </div>
-                      33 個關鍵點，姿態變化更好比
+                      {copy.core.visionBullets[0]}
                     </li>
                     <li className="flex items-center gap-3 text-sm font-bold text-slate-700">
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
                         <CheckCircle2 size={14} />
                       </div>
-                      骨架、關鍵幀與信心分數一起看
+                      {copy.core.visionBullets[1]}
                     </li>
                     <li className="flex items-center gap-3 text-sm font-bold text-slate-700">
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
                         <CheckCircle2 size={14} />
                       </div>
-                      影片匯入、比較與 PDF / CSV 匯出
+                      {copy.core.visionBullets[2]}
                     </li>
                   </ul>
                   
@@ -313,26 +265,26 @@ const LandingPage: React.FC = () => {
       <section id="measurements" className="relative overflow-hidden bg-slate-50 py-24">
         <div className="reveal mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center mb-16">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">檢測詳情</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">{copy.measurements.eyebrow}</p>
             <h2 className="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
-              每個指標，都對應現場判讀
+              {copy.measurements.title}
             </h2>
             <div className="mt-4 h-1.5 w-20 rounded-full bg-brand-blue/20"></div>
             <p className="mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
-              IMU 看數據，Vision 看畫面。每個測試都會整理成清楚的結果，讓你快速知道表現在哪裡、差異在哪裡。
+              {copy.measurements.desc}
             </p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
-            {measurementGroups.map((group, idx) => (
+            {measurementCards.map((group, idx) => (
               <article key={group.app} className="reveal glass-card-premium rounded-[32px] bg-white p-8 sm:p-10" style={{ animationDelay: `${idx * 0.1}s` }}>
                 <div className="flex items-center justify-between border-b border-slate-100 pb-6">
                   <div>
-                    <div className="text-[10px] font-black uppercase tracking-widest text-brand-blue">{group.app} Measurement</div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-brand-blue">{group.app} {copy.measurements.appMeasurement}</div>
                     <h3 className="mt-1 text-2xl font-black text-slate-950">{group.title}</h3>
                   </div>
                   <div className="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-bold text-slate-500">
-                    VERSION 1.0 Ready
+                    {copy.measurements.version}
                   </div>
                 </div>
 
@@ -382,13 +334,13 @@ const LandingPage: React.FC = () => {
       <section id="process" className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="reveal flex flex-col items-center text-center mb-20">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">使用流程</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">{copy.process.eyebrow}</p>
             <h2 className="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
-              四步，完成一次跳躍測試
+              {copy.process.title}
             </h2>
             <div className="mt-4 h-1.5 w-20 rounded-full bg-brand-blue/20"></div>
             <p className="mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
-              選好 App，完成測試，結果會直接整理成你看得懂的內容。
+              {copy.process.desc}
             </p>
           </div>
 
@@ -396,19 +348,14 @@ const LandingPage: React.FC = () => {
             {/* Connecting Line (Desktop) */}
             <div className="absolute top-1/2 left-0 right-0 hidden h-0.5 -translate-y-12 bg-slate-100 md:block"></div>
             
-            {[
-              ['01', '選擇 App', 'IMU 或 Vision，對應不同測試。'],
-              ['02', '完成設定', '依提示開啟感測器或攝影機。'],
-              ['03', '開始跳躍', '完成 CMJ、SJ、DJ、SLS 或 DS。'],
-              ['04', '查看結果', '立即看到分析、AI 建議與報告。'],
-            ].map(([step, title, desc], idx) => (
-              <article key={step} className="reveal group relative text-center" style={{ animationDelay: `${idx * 0.1}s` }}>
+            {copy.process.steps.map((step, idx) => (
+              <article key={step.id} className="reveal group relative text-center" style={{ animationDelay: `${idx * 0.1}s` }}>
                 <div className="relative mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-[32px] bg-slate-950 text-2xl font-black text-white shadow-2xl transition-all group-hover:bg-brand-blue group-hover:scale-110">
-                  {step}
+                  {step.id}
                   <div className="absolute -inset-2 rounded-[38px] border-2 border-brand-blue/0 transition-all group-hover:border-brand-blue/20"></div>
                 </div>
-                <h3 className="text-xl font-black text-slate-950">{title}</h3>
-                <p className="mt-3 text-sm font-medium leading-relaxed text-slate-500">{desc}</p>
+                <h3 className="text-xl font-black text-slate-950">{step.title}</h3>
+                <p className="mt-3 text-sm font-medium leading-relaxed text-slate-500">{step.desc}</p>
               </article>
             ))}
           </div>
@@ -418,13 +365,13 @@ const LandingPage: React.FC = () => {
 
       <section id="legal" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="reveal flex flex-col items-center text-center mb-16">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">透明度</p>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">{copy.privacy.eyebrow}</p>
           <h2 className="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
-            隱私與數據處理
+            {copy.privacy.title}
           </h2>
           <div className="mt-4 h-1.5 w-20 rounded-full bg-brand-blue/20"></div>
           <p className="mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed font-medium">
-            我們相信數據主權。ChironMotion 系列 App 的每一行代碼，都以保護您的運動隱私為最高原則。
+            {copy.privacy.desc}
           </p>
         </div>
 
@@ -436,25 +383,25 @@ const LandingPage: React.FC = () => {
                 <img src={imuLogo} alt="IMU" className="h-8 w-8 object-contain" />
               </div>
               <div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-brand-blue">IMU Legal Info</div>
-                <h3 className="text-xl font-black text-slate-950">ChironMotion IMU</h3>
+                <div className="text-[10px] font-black uppercase tracking-widest text-brand-blue">{copy.privacy.imuBadge}</div>
+                <h3 className="text-xl font-black text-slate-950">{copy.privacy.imuTitle}</h3>
               </div>
             </div>
             <p className="mt-6 text-sm font-medium leading-relaxed text-slate-600">
-               更新日期：2026/02/11。針對感測器數據、裝置信息與使用紀錄進行透明化說明，確保您的訓練隱私無虞。
+               {copy.privacy.imuUpdated}
             </p>
             <ul className="mt-6 space-y-3">
               <li className="flex items-center gap-3 text-xs font-bold text-slate-500">
                 <ShieldCheck className="h-4 w-4 text-brand-blue" />
-                本地端即時運算，數據歸屬使用者
+                {copy.privacy.imuBullets[0]}
               </li>
               <li className="flex items-center gap-3 text-xs font-bold text-slate-500">
                 <ShieldCheck className="h-4 w-4 text-brand-blue" />
-                非醫療用途聲明，僅供運動表現參考
+                {copy.privacy.imuBullets[1]}
               </li>
             </ul>
             <Link to="/legal#imu" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-brand-blue transition hover:gap-3">
-              查看 IMU 完整條款
+              {copy.privacy.imuLink}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </article>
@@ -466,25 +413,25 @@ const LandingPage: React.FC = () => {
                 <img src={visionLogo} alt="Vision" className="h-8 w-8 object-contain" />
               </div>
               <div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-brand-cyan">Vision Legal Info</div>
-                <h3 className="text-xl font-black text-slate-950">ChironMotion Vision</h3>
+                <div className="text-[10px] font-black uppercase tracking-widest text-brand-cyan">{copy.privacy.visionBadge}</div>
+                <h3 className="text-xl font-black text-slate-950">{copy.privacy.visionTitle}</h3>
               </div>
             </div>
             <p className="mt-6 text-sm font-medium leading-relaxed text-slate-600">
-               更新日期：2026/03/17。針對影像辨識與 AI 骨架追蹤的數據流與倫理原則進行詳細說明。
+               {copy.privacy.visionUpdated}
             </p>
             <ul className="mt-6 space-y-3">
               <li className="flex items-center gap-3 text-xs font-bold text-slate-500">
                 <ShieldCheck className="h-4 w-4 text-brand-cyan" />
-                強調影像隱私：裝置端處理即刪，不留底片
+                {copy.privacy.visionBullets[0]}
               </li>
               <li className="flex items-center gap-3 text-xs font-bold text-slate-500">
                 <ShieldCheck className="h-4 w-4 text-brand-cyan" />
-                AI 倫理聲明，明確區分訓練建議與醫療指示
+                {copy.privacy.visionBullets[1]}
               </li>
             </ul>
             <Link to="/legal#vision" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-brand-cyan transition hover:gap-3">
-              查看 Vision 完整條款
+              {copy.privacy.visionLink}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </article>
@@ -498,13 +445,13 @@ const LandingPage: React.FC = () => {
           
           <div className="relative z-10 flex flex-col items-center">
             <div className="inline-flex rounded-full bg-white/10 px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
-              Ready to test
+              {copy.cta.badge}
             </div>
             <h2 className="mt-8 text-5xl font-black tracking-tight text-white sm:text-7xl">
-              現在就開始 <br /> <span className="text-brand-cyan">看懂你的跳躍</span>
+              {copy.cta.titleTop} <br /> <span className="text-brand-cyan">{copy.cta.titleHighlight}</span>
             </h2>
             <p className="mx-auto mt-8 max-w-xl text-lg font-medium leading-relaxed text-white/60">
-              IMU 看數據，Vision 看畫面。選擇適合你的測試方式，從今天開始把每次跳躍看得更清楚。
+              {copy.cta.description}
             </p>
 
             <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
@@ -515,16 +462,16 @@ const LandingPage: React.FC = () => {
                 className="btn-gradient-brand flex w-full items-center justify-center gap-3 rounded-2xl px-10 py-5 text-base font-black sm:w-auto"
               >
                 <Download className="h-5 w-5" />
-                下載 IMU
+                {copy.cta.downloadIMU}
               </a>
               <button
                 type="button"
                 disabled
                 className="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-10 py-5 text-base font-black text-white sm:w-auto"
               >
-                <span>Vision</span>
+                <span>{copy.cta.downloadVision}</span>
                 <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-white/70">
-                  即將推出
+                  {copy.cta.comingSoon}
                 </span>
                 <Play className="h-5 w-5 text-white/40" />
               </button>

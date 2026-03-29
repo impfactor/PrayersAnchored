@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import { ArrowRight, Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 import imuLogo from '../assets/CMI.jpg';
 import visionLogo from '../assets/CMV.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { name: '特色', href: '/#features' },
-    { name: '檢測項目', href: '/#measurements' },
-    { name: '流程', href: '/#process' },
-    { name: '法律文件', href: '/legal' },
+    { name: t.navbar.features, href: '/#features' },
+    { name: t.navbar.protocols, href: '/#measurements' },
+    { name: t.navbar.process, href: '/#process' },
+    { name: t.navbar.legal, href: '/legal' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -73,7 +75,33 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center rounded-full border border-slate-200 bg-white/70 p-1 shadow-sm">
+            <button
+              type="button"
+              onClick={() => setLanguage('zh')}
+              className={`rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-[0.2em] transition ${
+                language === 'zh'
+                  ? 'bg-slate-950 text-white'
+                  : 'text-slate-500 hover:text-slate-950'
+              }`}
+              aria-label="切換至中文"
+            >
+              中
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              className={`rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-[0.2em] transition ${
+                language === 'en'
+                  ? 'bg-slate-950 text-white'
+                  : 'text-slate-500 hover:text-slate-950'
+              }`}
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+          </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="inline-flex items-center justify-center rounded-full p-2 text-slate-600 hover:bg-white/50 hover:text-brand-blue focus:outline-none md:hidden"
