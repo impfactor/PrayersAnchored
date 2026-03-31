@@ -57,28 +57,6 @@ const LegalDocuments: React.FC = () => {
     }
   }, [activeApp, appParam, current.sections, navigate, sectionParam]);
 
-  useEffect(() => {
-    // Reveal logic
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-active');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, [activeApp, activeSectionId]);
-
   const getSectionTitle = (section: { title: string; titleEn: string }) =>
     language === 'en' ? section.titleEn : section.title;
   const getSectionSubtitle = (section: { title: string; titleEn: string }) =>
@@ -96,7 +74,7 @@ const LegalDocuments: React.FC = () => {
     <div className="min-h-screen bg-slate-50 pb-24 pt-32 lg:pt-40">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <section className="reveal overflow-hidden rounded-[48px] border border-slate-200 bg-white shadow-xl shadow-slate-200/50 transition-all hover:shadow-2xl">
+        <section className="overflow-hidden rounded-[48px] border border-slate-200 bg-white shadow-xl shadow-slate-200/50 transition-all hover:shadow-2xl">
           <div className="p-8 sm:p-12">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
@@ -167,7 +145,7 @@ const LegalDocuments: React.FC = () => {
         </section>
 
         {/* Quick Navigation - Pill style */}
-        <section className="reveal mt-10 overflow-hidden rounded-full border border-slate-200 bg-white/70 p-1.5 shadow-sm backdrop-blur-md" style={{ animationDelay: '0.1s' }}>
+        <section className="mt-10 overflow-hidden rounded-full border border-slate-200 bg-white/70 p-1.5 shadow-sm backdrop-blur-md">
           <div className="flex gap-1 overflow-x-auto p-1 scrollbar-hide">
             {current.sections.map((section) => (
               <button
@@ -189,12 +167,11 @@ const LegalDocuments: React.FC = () => {
         {/* Main Content Areas */}
         <main className="mt-16 space-y-20">
           <div id={activeApp} className="scroll-mt-24" aria-hidden="true" />
-          {visibleSections.map((section, sIdx) => (
+          {visibleSections.map((section) => (
             <section
               key={section.id}
               id={`${activeApp}-${section.id}`}
-              className="reveal scroll-mt-24 space-y-8"
-              style={{ animationDelay: `${sIdx * 0.1}s` }}
+              className="scroll-mt-24 space-y-8"
             >
               <div className="flex flex-col border-b-2 border-slate-100 pb-2">
                 <h2 className="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
@@ -243,7 +220,7 @@ const LegalDocuments: React.FC = () => {
           ))}
 
           {/* Contact Section */}
-          <section className="reveal rounded-[48px] bg-slate-950 p-10 text-center text-white shadow-2xl sm:p-20" style={{ animationDelay: '0.2s' }}>
+          <section className="rounded-[48px] bg-slate-950 p-10 text-center text-white shadow-2xl sm:p-20">
             <div className="inline-flex rounded-full bg-white/10 px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 mb-8 font-black">
                 {copy.contactBadge}
               </div>
