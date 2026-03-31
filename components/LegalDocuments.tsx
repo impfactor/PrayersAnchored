@@ -62,6 +62,16 @@ const LegalDocuments: React.FC = () => {
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach((el) => observer.observe(el));
 
+    const hash = window.location.hash.replace('#', '').toLowerCase();
+    if (hash === 'vision' || hash === 'imu') {
+      window.requestAnimationFrame(() => {
+        const target = document.getElementById(`${hash}-terms`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }
+      });
+    }
+
     return () => observer.disconnect();
   }, [activeApp]); // Re-run when app changes to observe new sections
 
