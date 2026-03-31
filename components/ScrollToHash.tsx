@@ -10,7 +10,7 @@ const ScrollToHash = () => {
     const rawTargetId = hash.substring(1).toLowerCase();
     const targetId =
       rawTargetId === 'imu' || rawTargetId === 'vision'
-        ? rawTargetId
+        ? `${rawTargetId}-terms`
         : rawTargetId;
 
     let cancelled = false;
