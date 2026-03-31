@@ -5,7 +5,7 @@ const ScrollToHash = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) return;
+    if (!hash || pathname.startsWith('/legal')) return;
 
     const rawTargetId = hash.substring(1).toLowerCase();
     const targetId =

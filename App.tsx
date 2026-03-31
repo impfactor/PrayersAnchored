@@ -16,6 +16,8 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/legal" element={<LegalDocuments />} />
+            <Route path="/legal/:appKey" element={<LegalDocuments />} />
+            <Route path="/legal/:appKey/:sectionId" element={<LegalDocuments />} />
           </Routes>
         </main>
         <Footer />
@@ -25,4 +27,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-

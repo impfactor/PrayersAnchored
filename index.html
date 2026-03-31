@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ChironMotion Studio | IMU / Vision 跳躍動作分析</title>
+    <script>
+      (function () {
+        var path = window.location.pathname.replace(/\/+$/, '');
+        var hash = window.location.hash.replace('#', '').toLowerCase();
+        var match = hash.match(/^(imu|vision)(?:-(terms|privacy|ai))?$/);
+
+        if (path === '/legal' && match) {
+          var app = match[1];
+          var section = match[2] || 'terms';
+          window.history.replaceState(null, '', '/legal/' + app + '/' + section + window.location.search);
+        }
+      })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>

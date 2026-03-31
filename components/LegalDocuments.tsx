@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Download, Printer, ShieldCheck, ChevronRight } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
 import imuLogo from '../assets/CMI.jpg';
@@ -9,16 +10,10 @@ import { legalData } from '../constants/legalData';
 type AppKey = 'imu' | 'vision';
 
 const LegalDocuments: React.FC = () => {
-  const getInitialApp = (): AppKey => {
-    if (typeof window === 'undefined') return 'imu';
-    const hash = window.location.hash.replace('#', '').toLowerCase();
-    if (hash === 'vision') return 'vision';
-    if (hash === 'imu') return 'imu';
-    return 'imu';
-  };
-
-  const [activeApp, setActiveApp] = useState<AppKey>(getInitialApp);
+  const navigate = useNavigate();
+  const { appKey: appParam, sectionId: sectionParam } = useParams();
   const { language } = useLanguage();
+  const activeApp: AppKey = appParam === 'vision' ? 'vision' : 'imu';
   const copy = language === 'en'
     ? {
         badge: 'Legal Resource Center',
@@ -43,6 +38,25 @@ const LegalDocuments: React.FC = () => {
         email: '電子郵件聯絡',
       };
 
+  const current = legalData[activeApp];
+  const activeSectionId = sectionParam && current.sections.some((section) => section.id === sectionParam)
+    ? sectionParam
+    : null;
+  const visibleSections = activeSectionId
+    ? current.sections.filter((section) => section.id === activeSectionId)
+    : current.sections;
+
+  useEffect(() => {
+    if (appParam && appParam !== 'imu' && appParam !== 'vision') {
+      navigate('/legal/imu/terms', { replace: true });
+      return;
+    }
+
+    if (sectionParam && !current.sections.some((section) => section.id === sectionParam)) {
+      navigate(`/legal/${activeApp}/terms`, { replace: true });
+    }
+  }, [activeApp, appParam, current.sections, navigate, sectionParam]);
+
   useEffect(() => {
     // Reveal logic
     const observerOptions = {
@@ -62,36 +76,20 @@ const LegalDocuments: React.FC = () => {
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach((el) => observer.observe(el));
 
-    const hash = window.location.hash.replace('#', '').toLowerCase();
-    if (hash === 'vision' || hash === 'imu') {
-      window.requestAnimationFrame(() => {
-        const target = document.getElementById(`${hash}-terms`);
-        if (target) {
-          target.scrollIntoView({ behavior: 'auto', block: 'start' });
-        }
-      });
-    }
-
     return () => observer.disconnect();
-  }, [activeApp]); // Re-run when app changes to observe new sections
+  }, [activeApp, activeSectionId]);
 
-  const current = activeApp === 'imu' ? legalData.imu : legalData.vision;
-  const logo = activeApp === 'imu' ? imuLogo : visionLogo;
   const getSectionTitle = (section: { title: string; titleEn: string }) =>
     language === 'en' ? section.titleEn : section.title;
   const getSectionSubtitle = (section: { title: string; titleEn: string }) =>
     language === 'en' ? section.title : section.titleEn;
 
   const selectApp = (app: AppKey) => {
-    setActiveApp(app);
-    window.history.replaceState(null, '', `/legal#${app}`);
+    navigate(`/legal/${app}/${activeSectionId ?? 'terms'}`);
   };
 
   const jumpToSection = (sectionId: string) => {
-    const target = document.getElementById(activeApp + '-' + sectionId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    navigate(`/legal/${activeApp}/${sectionId}`);
   };
 
   return (
@@ -176,7 +174,11 @@ const LegalDocuments: React.FC = () => {
                 key={section.id}
                 type="button"
                 onClick={() => jumpToSection(section.id)}
-                className="shrink-0 rounded-full px-6 py-2.5 text-xs font-black uppercase tracking-widest text-slate-600 transition hover:bg-brand-blue hover:text-white"
+                className={`shrink-0 rounded-full px-6 py-2.5 text-xs font-black uppercase tracking-widest transition ${
+                  activeSectionId === section.id || (!activeSectionId && section.id === 'terms')
+                    ? 'bg-brand-blue text-white'
+                    : 'text-slate-600 hover:bg-brand-blue hover:text-white'
+                }`}
               >
                 {getSectionTitle(section)}
               </button>
@@ -187,7 +189,7 @@ const LegalDocuments: React.FC = () => {
         {/* Main Content Areas */}
         <main className="mt-16 space-y-20">
           <div id={activeApp} className="scroll-mt-24" aria-hidden="true" />
-          {current.sections.map((section, sIdx) => (
+          {visibleSections.map((section, sIdx) => (
             <section
               key={section.id}
               id={`${activeApp}-${section.id}`}

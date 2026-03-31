@@ -400,7 +400,7 @@ const LandingPage: React.FC = () => {
                 {copy.privacy.imuBullets[1]}
               </li>
             </ul>
-            <Link to="/legal#imu" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-brand-blue transition hover:gap-3">
+            <Link to="/legal/imu/terms" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-brand-blue transition hover:gap-3">
               {copy.privacy.imuLink}
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -430,7 +430,7 @@ const LandingPage: React.FC = () => {
                 {copy.privacy.visionBullets[1]}
               </li>
             </ul>
-            <Link to="/legal#vision" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-brand-cyan transition hover:gap-3">
+            <Link to="/legal/vision/terms" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-brand-cyan transition hover:gap-3">
               {copy.privacy.visionLink}
               <ArrowRight className="h-4 w-4" />
             </Link>
