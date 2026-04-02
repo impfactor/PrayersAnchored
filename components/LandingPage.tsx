@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Download, Play, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Download, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -13,6 +13,7 @@ import visionSkeletonImage from '../assets/vision-skeleton.jpg';
 import imuVideo from '../assets/ChironMotionIMU.mp4';
 
 const downloadIMU = 'https://apps.apple.com/us/app/chironmotion-imu/id6758951844';
+const downloadVision = 'https://apps.apple.com/us/app/chironmotion-vision/id6759504031';
 
 const LandingPage: React.FC = () => {
   const { t } = useLanguage();
@@ -102,17 +103,15 @@ const LandingPage: React.FC = () => {
               {copy.hero.ctaIMU}
               <ArrowRight className="h-5 w-5" />
             </a>
-            <button
-              type="button"
-              disabled
-              className="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-8 py-5 text-base font-black text-slate-950 transition sm:w-auto"
+            <a
+              href={downloadVision}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-8 py-5 text-base font-black text-slate-950 transition hover:-translate-y-0.5 hover:shadow-lg sm:w-auto"
             >
               {copy.hero.ctaVision}
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-slate-500">
-                {copy.hero.comingSoon}
-              </span>
-              <Play className="h-5 w-5 text-slate-400" />
-            </button>
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
 
           <div className="mt-16 flex items-center justify-center gap-6 overflow-hidden py-2 grayscale opacity-40">
@@ -464,17 +463,15 @@ const LandingPage: React.FC = () => {
                 <Download className="h-5 w-5" />
                 {copy.cta.downloadIMU}
               </a>
-              <button
-                type="button"
-                disabled
-                className="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-10 py-5 text-base font-black text-white sm:w-auto"
+              <a
+                href={downloadVision}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-10 py-5 text-base font-black text-white transition hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
               >
                 <span>{copy.cta.downloadVision}</span>
-                <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-white/70">
-                  {copy.cta.comingSoon}
-                </span>
-                <Play className="h-5 w-5 text-white/40" />
-              </button>
+                <ArrowRight className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
