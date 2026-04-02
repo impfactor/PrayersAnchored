@@ -107,7 +107,7 @@ const LandingPage: React.FC = () => {
               href={downloadVision}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-8 py-5 text-base font-black text-slate-950 transition hover:-translate-y-0.5 hover:shadow-lg sm:w-auto"
+              className="btn-gradient-brand flex w-full items-center justify-center gap-2 rounded-full px-8 py-5 text-base font-black shadow-2xl sm:w-auto"
             >
               {copy.hero.ctaVision}
               <ArrowRight className="h-5 w-5" />
@@ -467,10 +467,10 @@ const LandingPage: React.FC = () => {
                 href={downloadVision}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-10 py-5 text-base font-black text-white transition hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
+                className="btn-gradient-brand flex w-full items-center justify-center gap-3 rounded-2xl px-10 py-5 text-base font-black sm:w-auto"
               >
+                <Download className="h-5 w-5" />
                 <span>{copy.cta.downloadVision}</span>
-                <ArrowRight className="h-5 w-5" />
               </a>
             </div>
           </div>
