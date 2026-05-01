@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { Download, Printer, ShieldCheck, ChevronRight } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-
-import imuLogo from '../assets/CMI.jpg';
-import visionLogo from '../assets/CMV.png';
 import { legalData } from '../constants/legalData';
+
+const imuLogo = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/CMI.jpg';
+const visionLogo = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/CMV.png';
 
 type AppKey = 'imu' | 'vision';
 
@@ -14,29 +14,62 @@ const LegalDocuments: React.FC = () => {
   const { appKey: appParam, sectionId: sectionParam } = useParams();
   const { language } = useLanguage();
   const activeApp: AppKey = appParam === 'vision' ? 'vision' : 'imu';
-  const copy = language === 'en'
-    ? {
-        badge: 'Legal Resource Center',
-        title: 'ChironMotion Legal Center',
-        desc: 'We keep privacy first. Below are the official legal terms for the ChironMotion apps, including user rights, data protection policy, and AI ethics guidance.',
-        print: 'Print File',
-        secure: 'All agreements are governed by law and effective immediately',
-        contactBadge: 'Support Center',
-        contactTitle: 'Contact the Data Security Team',
-        contactDesc: 'Have questions about the terms or privacy policy? Our legal and security team is ready to help.',
-        email: 'Email Us',
-      }
-    : {
-        badge: 'Legal Resource Center',
-        title: 'ChironMotion 法律中心',
-        desc: '我們堅持「隱私優先」的核心價值。以下為 ChironMotion 系列 App 的正式法律條款，包含您的權益保障、數據保護政策與 AI 倫理指南。',
-        print: '列印檔案',
-        secure: '所有協議受法律管轄且即時生效',
-        contactBadge: 'Support Center',
-        contactTitle: '聯繫數據安全團隊',
-        contactDesc: '對條款或隱私有任何疑問？我們的法務與安全團隊隨時為您解答。',
-        email: '電子郵件聯絡',
-      };
+
+  const legalCopyMap = {
+    zh: {
+      badge: 'Legal Resource Center',
+      title: 'ChironMotion 法律中心',
+      desc: '我們堅持「隱私優先」的核心價值。以下為 ChironMotion 系列 App 的正式法律條款，包含您的權益保障、數據保護政策與 AI 倫理指南。',
+      print: '列印檔案',
+      secure: '所有協議受法律管轄且即時生效',
+      contactBadge: 'Support Center',
+      contactTitle: '聯繫數據安全團隊',
+      contactDesc: '對條款或隱私有任何疑問？我們的法務與安全團隊隨時為您解答。',
+      email: '電子郵件聯絡',
+    },
+    en: {
+      badge: 'Legal Resource Center',
+      title: 'ChironMotion Legal Center',
+      desc: 'We keep privacy first. Below are the official legal terms for the ChironMotion apps, including user rights, data protection policy, and AI ethics guidance.',
+      print: 'Print File',
+      secure: 'All agreements are governed by law and effective immediately',
+      contactBadge: 'Support Center',
+      contactTitle: 'Contact the Data Security Team',
+      contactDesc: 'Have questions about the terms or privacy policy? Our legal and security team is ready to help.',
+      email: 'Email Us',
+    },
+    ko: {
+      badge: 'Legal Resource Center',
+      title: 'ChironMotion 법적 고지 센터',
+      desc: '저희는 "프라이버시 우선"이라는 핵심 가치를 지킵니다. 아래는 ChironMotion 시리즈 앱의 공식 법적 약관이며, 사용자의 권리, 데이터 보호 정책, AI 윤리 가이드를 포함합니다.',
+      print: '파일 인쇄',
+      secure: '모든 약관은 법률에 따라 즉시 효력을 발생합니다',
+      contactBadge: 'Support Center',
+      contactTitle: '데이터 보안팀에 문의',
+      contactDesc: '약관이나 프라이버시에 관해 궁금한 점이 있으신가요? 법무 및 보안팀이 언제든지 답변드립니다.',
+      email: '이메일로 문의',
+    },
+    ja: {
+      badge: 'Legal Resource Center',
+      title: 'ChironMotion 法的情報センター',
+      desc: '私たちは「プライバシー第一」を信条としています。以下は ChironMotion シリーズアプリの正式な法的条項で、ユーザーの権利、データ保護方針、AI 倫理ガイドラインを含みます。',
+      print: 'ファイルを印刷',
+      secure: 'すべての規約は法律に準拠し即時有効です',
+      contactBadge: 'Support Center',
+      contactTitle: 'データセキュリティチームへ連絡',
+      contactDesc: '規約やプライバシーについてご不明な点がございましたら、法務・セキュリティチームまでお問い合わせください。',
+      email: 'メールで問い合わせ',
+    },
+  } as const;
+
+  const copy = legalCopyMap[language] ?? legalCopyMap.zh;
+
+  const appTitleMap: Record<typeof language, { imu: string; vision: string }> = {
+    zh: { imu: 'IMU 分析儀', vision: 'Vision 視覺分析' },
+    en: { imu: 'IMU Analysis', vision: 'Vision Analysis' },
+    ko: { imu: 'IMU 분석기', vision: 'Vision 시각 분석' },
+    ja: { imu: 'IMU アナライザー', vision: 'Vision ビジョン分析' },
+  };
 
   const current = legalData[activeApp];
   const activeSectionId = sectionParam && current.sections.some((section) => section.id === sectionParam)
@@ -57,10 +90,13 @@ const LegalDocuments: React.FC = () => {
     }
   }, [activeApp, appParam, current.sections, navigate, sectionParam]);
 
+  // Legal sections only have zh / en copy. For ko / ja, show English as the
+  // primary heading (with the Chinese subtitle below) so non-Chinese readers
+  // still get a heading they can read.
   const getSectionTitle = (section: { title: string; titleEn: string }) =>
-    language === 'en' ? section.titleEn : section.title;
+    language === 'zh' ? section.title : section.titleEn;
   const getSectionSubtitle = (section: { title: string; titleEn: string }) =>
-    language === 'en' ? section.title : section.titleEn;
+    language === 'zh' ? section.titleEn : section.title;
 
   const selectApp = (app: AppKey) => {
     navigate(`/legal/${app}/${activeSectionId ?? 'terms'}`);
@@ -93,9 +129,7 @@ const LegalDocuments: React.FC = () => {
                 {Object.keys(legalData).map((key) => {
                   const appKey = key as AppKey;
                   const isActive = activeApp === appKey;
-                  const appTitle = language === 'en'
-                    ? (appKey === 'imu' ? 'IMU Analysis' : 'Vision Analysis')
-                    : (appKey === 'imu' ? 'IMU 分析儀' : 'Vision 視覺分析');
+                  const appTitle = appTitleMap[language][appKey];
                   return (
                     <button
                       key={appKey}

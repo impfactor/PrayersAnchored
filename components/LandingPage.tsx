@@ -3,14 +3,14 @@ import { ArrowRight, Download, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
-import imuLogo from '../assets/CMI.jpg';
-import imuResultImage from '../assets/imu-result.jpg';
-import imuSymmetryImage from '../assets/imu-symmetry.jpg';
+const imuLogo = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/CMI.jpg';
+const imuResultImage = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/imu-result.jpg';
+const imuSymmetryImage = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/imu-symmetry.jpg';
 
-import visionLogo from '../assets/CMV.png';
-import visionResultImage from '../assets/vision-result.jpg';
-import visionSkeletonImage from '../assets/vision-skeleton.jpg';
-import imuVideo from '../assets/ChironMotionIMU.mp4';
+const visionLogo = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/CMV.png';
+const visionResultImage = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/vision-result.jpg';
+const visionSkeletonImage = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/vision-skeleton.jpg';
+const imuVideo = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/ChironMotionIMU.mp4';
 
 const downloadIMU = 'https://apps.apple.com/us/app/chironmotion-imu/id6758951844';
 const downloadVision = 'https://apps.apple.com/us/app/chironmotion-vision/id6759504031';

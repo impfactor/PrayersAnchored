@@ -10,6 +10,11 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 const STORAGE_KEY = 'chironmotion-language';
 
+const SUPPORTED_LANGUAGES: Language[] = ['zh', 'en', 'ko', 'ja'];
+
+const isSupportedLanguage = (value: unknown): value is Language =>
+  typeof value === 'string' && (SUPPORTED_LANGUAGES as string[]).includes(value);
+
 const detectBrowserLanguage = (): Language => {
   if (typeof window === 'undefined') {
     return 'zh';
@@ -19,18 +24,12 @@ const detectBrowserLanguage = (): Language => {
     .filter(Boolean)
     .map((lang) => lang.toLowerCase());
 
-  if (candidates.some((lang) => lang.startsWith('en'))) {
-    return 'en';
-  }
-
-  if (
-    candidates.some((lang) =>
-      lang.startsWith('zh') ||
-      lang.startsWith('ja') ||
-      lang.startsWith('ko')
-    )
-  ) {
-    return 'zh';
+  // Match in priority order — first hit wins.
+  for (const candidate of candidates) {
+    if (candidate.startsWith('zh')) return 'zh';
+    if (candidate.startsWith('en')) return 'en';
+    if (candidate.startsWith('ko')) return 'ko';
+    if (candidate.startsWith('ja')) return 'ja';
   }
 
   return 'zh';
@@ -42,7 +41,7 @@ const getInitialLanguage = (): Language => {
   }
 
   const storedLanguage = window.localStorage.getItem(STORAGE_KEY);
-  if (storedLanguage === 'zh' || storedLanguage === 'en') {
+  if (isSupportedLanguage(storedLanguage)) {
     return storedLanguage;
   }
 

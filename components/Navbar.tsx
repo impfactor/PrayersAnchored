@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import type { Language } from '../translations';
 
-import imuLogo from '../assets/CMI.jpg';
-import visionLogo from '../assets/CMV.png';
+const LANGUAGE_OPTIONS: { code: Language; label: string; ariaLabel: string }[] = [
+  { code: 'zh', label: '中', ariaLabel: '切換至中文' },
+  { code: 'en', label: 'EN', ariaLabel: 'Switch to English' },
+  { code: 'ko', label: '한', ariaLabel: '한국어로 전환' },
+  { code: 'ja', label: '日', ariaLabel: '日本語に切り替え' },
+];
+
+const imuLogo = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/CMI.jpg';
+const visionLogo = 'https://raw.githubusercontent.com/impfactor/intro-chironmotion/main/assets/CMV.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,30 +85,21 @@ const Navbar: React.FC = () => {
 
         <div className="flex items-center gap-2">
           <div className="flex items-center rounded-full border border-slate-200 bg-white/70 p-1 shadow-sm">
-            <button
-              type="button"
-              onClick={() => setLanguage('zh')}
-              className={`rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-[0.2em] transition ${
-                language === 'zh'
-                  ? 'bg-slate-950 text-white'
-                  : 'text-slate-500 hover:text-slate-950'
-              }`}
-              aria-label="切換至中文"
-            >
-              中
-            </button>
-            <button
-              type="button"
-              onClick={() => setLanguage('en')}
-              className={`rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-[0.2em] transition ${
-                language === 'en'
-                  ? 'bg-slate-950 text-white'
-                  : 'text-slate-500 hover:text-slate-950'
-              }`}
-              aria-label="Switch to English"
-            >
-              EN
-            </button>
+            {LANGUAGE_OPTIONS.map((option) => (
+              <button
+                key={option.code}
+                type="button"
+                onClick={() => setLanguage(option.code)}
+                className={`rounded-full px-2.5 py-1 text-[11px] font-black uppercase tracking-[0.2em] transition ${
+                  language === option.code
+                    ? 'bg-slate-950 text-white'
+                    : 'text-slate-500 hover:text-slate-950'
+                }`}
+                aria-label={option.ariaLabel}
+              >
+                {option.label}
+              </button>
+            ))}
           </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
